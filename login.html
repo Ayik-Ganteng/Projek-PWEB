@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Universitas Amikom Yogyakarta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            background-color: #E8E8E8;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8B4A9C, #6A3093);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-text {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            padding: 40px 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            max-width: 1000px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 60px 50px;
+            background: white;
+        }
+
+        .form-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #E8E8E8;
+            background-color: #F8F8F8;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #8B4A9C;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(139, 74, 156, 0.1);
+        }
+
+        .register-text {
+            font-size: 12px;
+            color: #666;
+            margin: 25px 0;
+            line-height: 1.5;
+        }
+
+        .register-text .register-link {
+            color: #8B4A9C;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .register-text .register-link:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #8B4A9C, #6A3093);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 74, 156, 0.3);
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 74, 156, 0.4);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .illustration-section {
+            flex: 1;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6, #A855F7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #8B4A9C;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+                margin: 20px;
+            }
+
+            .form-section {
+                padding: 40px 30px;
+            }
+
+            .form-title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .illustration-section {
+                min-height: 200px;
+            }
+
+            .header {
+                padding: 15px 20px;
+            }
+
+            .header-text {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-section {
+                padding: 30px 20px;
+            }
+
+            .main-container {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🎓</div>
+        <div class="header-text">Universitas Amikom Yogyakarta</div>
+    </div>
+    
+    <div class="main-container">
+        <div class="login-container">
+            <div class="form-section">
+                <h2 class="form-title">LOGIN</h2>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <div class="register-text">
+                        Jika belum memiliki akun Amikom, maka bisa langsung ke halaman 
+                        <a href="#register" class="register-link">Register</a>.
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+            </div>
+            
+            <div class="illustration-section">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            if (username && password) {
+                alert('Login berhasil! (Demo)\n\nSelamat datang, ' + username + '!');
+                // Reset form
+                this.reset();
+            } else {
+                alert('Mohon isi username dan password');
+            }
+        });
+
+        // Add input animations
+        const inputs = document.querySelectorAll('input');
+        
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Add some interactive effects
+        const loginBtn = document.querySelector('.login-btn');
+        
+        loginBtn.addEventListener('mouseenter', function() {
+            this.style.background = 'linear-gradient(135deg, #9B59B6, #7B4397)';
+        });
+        
+        loginBtn.addEventListener('mouseleave', function() {
+            this.style.background = 'linear-gradient(135deg, #8B4A9C, #6A3093)';
+        });
+
+        // Add click effects to links
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const linkText = this.textContent;
+                if (linkText === 'Register') {
+                    alert('Mengarahkan ke halaman Register...');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
